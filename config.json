@@ -1,0 +1,49 @@
+{
+  "form_page_url": "https://bunko.ozeu.site/toukou",
+  "api_post_url": "https://bunko.ozeu.site/api/bunko",
+  "submit_mode": "json", 
+  "threads": 5,
+  "total_submissions": 30,
+  "min_delay_ms": 150,
+  "max_delay_ms": 600,
+  "timeout_sec": 20,
+  "retries": 3,
+  "retry_backoff_base_sec": 0.8,
+  "respect_robots_txt": false,
+
+  "proxies": [
+    {"type": "socks5", "host": "23.95.150.145", "port": 6114, "username": "frictionplus", "password": "frictionplus"},
+    {"type": "socks5", "host": "198.23.239.134", "port": 6540, "username": "frictionplus", "password": "frictionplus"},
+    {"type": "socks5", "host": "45.38.107.97", "port": 6014, "username": "frictionplus", "password": "frictionplus"},
+    {"type": "socks5", "host": "207.244.217.165", "port": 6712, "username": "frictionplus", "password": "frictionplus"}
+  ],
+
+  "user_agents": [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+  ],
+
+  "form": {
+    "title": "${random_string:8,12}-${bug_text:light}",
+    "author": "bot_${random_string:5,8}",
+    "content": "TRIWAI ON TOP ${random_string:20,30}\\n---\\n${bug_text:heavy}"
+  },
+
+  "json_mapping": {
+    "title": "title",
+    "author": "author",
+    "content": "content"
+  },
+
+  "csrf": {
+    "enabled": false,
+    "extra_hidden_fields": [],
+    "token_names_hint": ["csrf", "_csrf", "csrf_token"]
+  },
+
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+    "Origin": "https://bunko.ozeu.site",
+    "Referer": "https://bunko.ozeu.site/toukou"
+  }
+}
